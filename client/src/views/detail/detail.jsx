@@ -16,7 +16,6 @@ const Detail = () => {
     }, [dispatch, detailId])
 
     const recipeDetail = useSelector((state) => state.detail)
-    console.log(recipeDetail)
 
     const backButtonHandler = () => {
         window.history.back();
@@ -25,7 +24,6 @@ const Detail = () => {
     return (
         <div className={style.detail}>
             <div>
-               
                 {
                     recipeDetail.length > 0 ?
                         <div>
@@ -47,7 +45,6 @@ const Detail = () => {
                             <h3 className={style.steps}>{recipeDetail[0].created ? recipeDetail[0].instructions : recipeDetail[0].instructions.map(el => el.steps.map(el => <p>{el.step}</p>))}</h3>
                             </div>
                             <h5 className={style.id}>Id: {recipeDetail[0].id}</h5>
-
                         </div> : <p>Loading...</p>
                 }
                  <button className={style.button} onClick={backButtonHandler}>Back</button>
