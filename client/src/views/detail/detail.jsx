@@ -47,7 +47,7 @@ const Detail = () => {
                             <h5 className={style.id}>Id: {recipeDetail[0].id}</h5>
                         </div> : <p>Loading...</p>
                 }
-                 <button className={style.button} onClick={backButtonHandler}>Back</button>
+                 <button className={style.button} onClick={backButtonHandler}>Home</button>
             </div>
         </div>
     )
