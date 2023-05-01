@@ -13,7 +13,7 @@ export const SORT_BY_HEALTHSCORE = 'SORT_BY_HEALTHSCORE';
 export const getRecipes = () => {
     return async function (dispatch) {
         try {
-            const recipes = await axios.get('http://localhost:3001/recipes');
+            const recipes = await axios.get('/recipes');
             dispatch({
                 type: GET_RECIPES,
                 payload: recipes.data
@@ -27,7 +27,7 @@ export const getRecipes = () => {
 export const getRecipesByTitle = (title) => {
     return async function (dispatch) {
         try {
-            const recipes = await axios.get(`http://localhost:3001/recipes?title=${title}`);
+            const recipes = await axios.get(`/recipes?title=${title}`);
             dispatch({
                 type: GET_RECIPES_BY_TITLE,
                 payload: recipes.data
@@ -42,7 +42,7 @@ export const getRecipesByTitle = (title) => {
 export const getRecipeDetail = (id) => {
     return async function (dispatch) {
         try {
-            const details = await axios.get(`http://localhost:3001/recipes/${id}`)
+            const details = await axios.get(`/recipes/${id}`)
             dispatch({
                 type: GET_RECIPE_DETAIL,
                 payload: details.data
@@ -57,7 +57,7 @@ export const getRecipeDetail = (id) => {
 export const getDiets = () => {
     return async function (dispatch) {
         try {
-            const diets = await axios.get('http://localhost:3001/diets');
+            const diets = await axios.get('/diets');
             const dietsSorted = diets.data.sort((a, b) => a.name.localeCompare(b.name));
             dispatch({
                 type: GET_DIETS,
